@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ALAB Pickle Club</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000;color:#F5F5F7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,dl,dd{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:12px;z-index:20;padding:0 16px}
+.pillnav{max-width:1080px;margin:12px auto 0;height:56px;padding:0 10px 0 22px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;background:rgba(28,28,30,.65);backdrop-filter:saturate(180%) blur(24px);-webkit-backdrop-filter:saturate(180%) blur(24px);border:1px solid rgba(255,255,255,.1);box-shadow:0 8px 40px rgba(0,0,0,.5)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.1em;font-size:17px}
+.nl{display:flex;gap:30px;font-size:14px;color:#D2D2D7}
+.nl a:hover{color:#fff}
+.nr{display:flex;align-items:center;gap:8px}
+.app{width:40px;height:40px;border-radius:50%;background:#111;border:1px solid rgba(255,255,255,.14);display:inline-flex;align-items:center;justify-content:center;transition:transform .25s ease,border-color .25s ease}
+.app:hover{transform:scale(1.08);border-color:#F58A2E}
+.app img{width:26px;height:26px;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;border-radius:999px;font-weight:600;font-size:17px;transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:scale(1.04)}
+.bp{background:linear-gradient(90deg,#F5C20F,#F58A2E 50%,#E5481F);color:#111;box-shadow:0 10px 40px rgba(245,138,46,.28)}
+.bp:hover{box-shadow:0 14px 56px rgba(245,138,46,.45)}
+.bs{background:rgba(255,255,255,.1);color:#F5F5F7;backdrop-filter:blur(12px)}
+.sm{min-height:40px;padding:0 20px;font-size:14px}
+.hero{position:relative;overflow:hidden;text-align:center;padding:120px 0 100px;margin-top:-68px}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;animation:drift 14s ease-in-out infinite alternate;pointer-events:none}
+.g1{width:560px;height:560px;left:8%;top:-120px;background:#E5481F}
+.g2b{width:520px;height:520px;right:6%;top:40px;background:#F5A81B;animation-delay:-6s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.12)}}
+.hero .wrap{position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#F5F5F7;font-size:14px;font-weight:500}
+.dot{width:8px;height:8px;border-radius:50%;background:#F5C20F;box-shadow:0 0 0 0 rgba(245,194,15,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(245,194,15,0)}100%{box-shadow:0 0 0 0 rgba(245,194,15,0)}}
+h1{font-size:clamp(52px,10vw,116px);font-weight:800;letter-spacing:-.045em;line-height:1;margin-top:28px}
+.grad{background:linear-gradient(100deg,#F5C20F 0%,#F58A2E 40%,#E5481F 75%,#D4102F 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(19px,2.4vw,26px);color:#B0B0B5;max-width:640px;margin:26px auto 0;line-height:1.4;font-weight:500}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.cta img{width:26px;height:26px}
+.court{position:relative;max-width:980px;margin:84px auto 0;border-radius:36px;border:1px solid rgba(255,255,255,.12);background:radial-gradient(70% 90% at 50% 120%,rgba(229,72,31,.4),transparent 70%),rgba(14,14,16,.8);padding:22px;box-shadow:0 50px 140px rgba(245,138,46,.16)}
+.court svg{display:block;width:100%;height:auto}
+.chips{position:absolute;left:50%;bottom:-26px;transform:translateX(-50%);display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%}
+.chip{padding:12px 20px;border-radius:999px;background:rgba(36,36,38,.8);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.chip i{width:8px;height:8px;border-radius:50%;background:#F58A2E;display:block}
+.strip{margin-top:96px;border-block:1px solid rgba(255,255,255,.08);padding:22px 0;overflow:hidden;white-space:nowrap}
+.mq{display:inline-block;animation:mq 30s linear infinite;font-size:22px;font-weight:700;letter-spacing:-.01em;color:#6E6E73}
+.mq span{margin:0 28px}
+.mq b{color:#F58A2E;font-weight:700}
+@keyframes mq{to{transform:translateX(-50%)}}
+.sec{padding:120px 0}
+.k{color:#F58A2E;font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:clamp(36px,5.5vw,64px);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:12px}
+.sub{font-size:21px;color:#A1A1A6;line-height:1.4;margin-top:16px;max-width:560px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:56px}
+.card{background:#1C1C1E;border:1px solid rgba(255,255,255,.06);border-radius:32px;padding:40px;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;grid-column:span 2;transition:transform .35s ease,border-color .35s ease}
+.card:hover{transform:translateY(-6px);border-color:rgba(245,138,46,.4)}
+.card.w{grid-column:span 4}
+.hot{background:radial-gradient(80% 90% at 100% 0%,rgba(245,138,46,.35),transparent 65%),#1C1C1E}
+.card h3{font-size:30px;font-weight:700;letter-spacing:-.025em;margin-top:10px}
+.card p{font-size:18px;color:#A1A1A6;line-height:1.45;margin-top:10px;max-width:440px}
+.book{position:relative;overflow:hidden;border-radius:40px;padding:72px 56px;background:radial-gradient(70% 120% at 0% 0%,rgba(245,138,46,.28),transparent 60%),radial-gradient(60% 100% at 100% 100%,rgba(212,16,47,.25),transparent 60%),#141416;border:1px solid rgba(255,255,255,.1)}
+.bk{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.logo{display:flex;align-items:center;justify-content:center}
+.logo div{width:260px;height:260px;border-radius:64px;background:#000;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 100px rgba(245,138,46,.35)}
+.logo img{width:180px;height:180px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:24px}
+.step b{display:flex;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#F5C20F,#E5481F);color:#111;align-items:center;justify-content:center;font-size:16px}
+.step p{margin-top:14px;font-size:16px;line-height:1.4;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.st{text-align:center;padding:36px 16px;border-radius:28px;background:#1C1C1E}
+.st b{display:block;font-size:56px;font-weight:800;letter-spacing:-.04em}
+.st span{color:#A1A1A6;font-size:16px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:280px;gap:16px;margin-top:56px}
+.t{position:relative;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:1px solid rgba(255,255,255,.08);transition:transform .4s ease,border-color .4s ease}
+.t:hover{transform:scale(1.02);border-color:rgba(245,138,46,.4)}
+.t p{font-size:15px;color:#A1A1A6}
+.big{grid-column:span 2;grid-row:span 2}
+.tall{grid-row:span 2}
+.wide{grid-column:span 2}
+.a{background:linear-gradient(135deg,#3A2410,#141011)}
+.b{background:linear-gradient(135deg,#34150F,#101010)}
+.c{background:linear-gradient(160deg,#3B2F0C,#121010)}
+.d{background:linear-gradient(135deg,#2A1519,#0F0F11)}
+.pill{position:absolute;top:16px;left:16px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);font-size:13px;font-weight:600}
+.play{width:64px;height:64px;border-radius:50%;border:0;background:rgba(255,255,255,.18);backdrop-filter:blur(16px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .25s ease,background .25s ease}
+.play:hover{transform:scale(1.1);background:rgba(255,255,255,.28)}
+.t img,.t video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;display:block}
+.t .pill{z-index:2;pointer-events:none}
+.t:has(img)::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),transparent 40%);pointer-events:none}
+.faq{max-width:760px;margin:56px auto 0}
+details{border-bottom:1px solid rgba(255,255,255,.1);padding:24px 0}
+summary{font-size:21px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:28px;color:#F58A2E;transition:transform .3s ease}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:#A1A1A6;font-size:18px;line-height:1.5;margin-top:12px}
+.visit{display:grid;grid-template-columns:1fr 1fr;background:#1C1C1E;border-radius:36px;overflow:hidden;margin-top:56px}
+.vl{padding:56px}
+.vl dt{color:#A1A1A6;font-size:14px;margin-top:28px}
+.vl dd{margin:6px 0 0;font-size:20px;font-weight:600}
+.map{min-height:340px;display:flex;align-items:center;justify-content:center;background:radial-gradient(60% 60% at 50% 50%,rgba(245,138,46,.38),transparent 70%),linear-gradient(135deg,#2A1A12,#121012)}
+.pin{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#F5C20F,#E5481F);color:#111;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(229,72,31,.5);transition:transform .25s ease}
+.pin:hover{transform:scale(1.08)}
+.foot{border-top:1px solid rgba(255,255,255,.08);padding:64px 0 48px;text-align:center}
+.soc{display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.soc a{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);color:#F5F5F7;display:inline-flex;align-items:center;justify-content:center;transition:transform .25s ease,background .25s ease,color .25s ease}
+.soc a:hover{transform:translateY(-3px) scale(1.06);background:linear-gradient(135deg,#F5C20F,#E5481F);color:#111}
+.soc a.ap{background:#000;border:1px solid rgba(245,138,46,.6)}
+.soc a.ap img{width:30px;height:30px}
+.copy{margin-top:32px;font-size:13px;color:#86868B}
+@supports (animation-timeline:view()){
+.rv{animation:rv both linear;animation-timeline:view();animation-range:entry 0% cover 26%}
+}
+@keyframes rv{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@media(max-width:900px){
+.nl{display:none}
+.bento,.stats{grid-template-columns:1fr}
+.card,.card.w{grid-column:auto}
+.bk,.visit{grid-template-columns:1fr}
+.book{padding:40px 24px}
+.steps{grid-template-columns:1fr}
+.g4{grid-template-columns:repeat(2,1fr);grid-auto-flow:dense}
+.sec{padding:80px 0}
+.vl{padding:36px}
+.chips{position:static;transform:none;margin-top:16px}
+}
+@media(max-width:520px){
+.g4{grid-template-columns:1fr}
+.big,.wide{grid-column:auto}
+.big,.tall{grid-row:auto}
+.hero{padding-top:110px}
+.logo div{width:200px;height:200px}
+}
+</style>
+
+</head>
+<body>
+
+<div>
+<header class="nav"><div class="pillnav">
+<a class="brand" href="#top" aria-label="ALAB home"><svg width="18" height="24" viewBox="0 0 24 32" aria-hidden="true"><defs><linearGradient id="gn" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5C20F"></stop><stop offset=".55" stop-color="#F58A2E"></stop><stop offset="1" stop-color="#D4102F"></stop></linearGradient></defs><path fill="url(#gn)" d="M12 1c1 5 7 8 7 15a7 7 0 0 1-14 0c0-3 2-5 3-7 .5 2 1.5 3 2.5 3C11 8 10 5 12 1z"></path></svg>ALAB</a>
+<nav class="nl" aria-label="Primary"><a href="#programs">Programs</a><a href="#book">Book</a><a href="#gallery">Gallery</a><a href="#faq">FAQ</a><a href="#visit">Visit</a></nav>
+<div class="nr"><a class="app" href="#" aria-label="Open the ALAB booking app"><img src="media/alab-app-logo.png" alt=""></a><a class="btn bp sm" href="#book">Book a game</a></div>
+</div></header>
+
+<section class="hero" id="top">
+<div class="glow g1"></div><div class="glow g2b"></div>
+<div class="wrap">
+<span class="eyebrow"><i class="dot"></i>Book games and courts in the ALAB app</span>
+<h1>IGNITE<br><span class="grad">THE GAME.</span></h1>
+<p class="lead">A pickleball club built for every level. Play, learn and compete.</p>
+<div class="cta"><a class="btn bp" href="#"><img src="media/alab-app-logo.png" alt="">Book a game</a><a class="btn bs" href="#gallery">Watch highlights</a></div>
+<div class="court">
+<svg viewBox="0 0 800 400" role="img" aria-label="Pickleball court illustration"><rect x="20" y="20" width="760" height="360" rx="14" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"></rect><line x1="400" y1="14" x2="400" y2="386" stroke="rgba(255,255,255,.5)" stroke-width="3"></line><line x1="240" y1="20" x2="240" y2="380" stroke="rgba(255,255,255,.22)" stroke-width="2"></line><line x1="560" y1="20" x2="560" y2="380" stroke="rgba(255,255,255,.22)" stroke-width="2"></line><line x1="20" y1="200" x2="240" y2="200" stroke="rgba(255,255,255,.22)" stroke-width="2"></line><line x1="560" y1="200" x2="780" y2="200" stroke="rgba(255,255,255,.22)" stroke-width="2"></line><circle cx="470" cy="150" r="22" fill="rgba(245,194,15,.18)"></circle><circle cx="470" cy="150" r="11" fill="#F5C20F"></circle></svg>
+<div class="chips"><span class="chip"><i></i>Live schedule</span><span class="chip"><i></i>Open games</span><span class="chip"><i></i>Court availability</span></div>
+</div>
+</div></section>
+
+<div class="strip" aria-hidden="true"><div class="mq"><span>Open play</span><b>●</b><span>Lessons</span><b>●</b><span>Leagues</span><b>●</b><span>Tournaments</span><b>●</b><span>Court rentals</span><b>●</b><span>Open play</span><b>●</b><span>Lessons</span><b>●</b><span>Leagues</span><b>●</b><span>Tournaments</span><b>●</b><span>Court rentals</span><b>●</b></div></div>
+
+<section class="sec" id="programs"><div class="wrap">
+<div class="rv"><p class="k">Programs</p>
+<h2>Everything you need<br>to play.</h2>
+<p class="sub">Whether it is your first paddle or your hundredth tournament.</p></div>
+<div class="bento rv">
+<div class="card w hot"><p class="k">Play</p><h3>Open play</h3><p>Drop in, meet players at your level and rotate through games all day.</p></div>
+<div class="card"><p class="k">Learn</p><h3>Lessons and clinics</h3><p>Build fundamentals with guided sessions.</p></div>
+<div class="card"><p class="k">Compete</p><h3>Leagues and events</h3><p>Climb the ladder and join tournaments.</p></div>
+<div class="card w"><p class="k">Reserve</p><h3>Court rentals</h3><p>Book a court for you and your crew. [ADD YOUR RATES]</p></div>
+</div>
+</div></section>
+
+<section class="sec" id="book" style="padding-top:0"><div class="wrap">
+<div class="book rv"><div class="bk">
+<div><p class="k">Booking</p><h2>Book in seconds.</h2>
+<p class="sub">See the schedule, find open games and reserve a court, all in the ALAB app.</p>
+<div class="steps"><div class="step"><b>1</b><p>Open the ALAB app</p></div><div class="step"><b>2</b><p>Pick a game or court</p></div><div class="step"><b>3</b><p>Show up and play</p></div></div>
+<div style="margin-top:36px"><a class="btn bp" href="#"><img src="media/alab-app-logo.png" alt="" style="width:26px;height:26px">Open the app</a></div></div>
+<div class="logo"><div><img src="media/alab-app-logo.png" alt="ALAB booking app logo"></div></div>
+</div></div>
+<div class="stats rv"><div class="st"><b class="grad">[00]</b><span>Courts</span></div><div class="st"><b class="grad">[00]</b><span>Weekly games</span></div><div class="st"><b class="grad">[00]</b><span>Members</span></div></div>
+</div></section>
+
+<section class="sec" id="gallery" style="background:#0A0A0B"><div class="wrap">
+<div class="rv"><p class="k">Gallery</p>
+<h2>Moments on court.</h2>
+<p class="sub">Highlights from the court.</p></div>
+<div class="g4 rv">
+<div class="t big"><span class="pill">Video</span><video controls playsinline preload="none" poster="media/gallery-video-1-poster.jpg" aria-label="ALAB highlights video"><source src="media/gallery-video-1.mp4" type="video/mp4"></video></div>
+<div class="t "><img src="media/gallery-photo-1.jpg" alt="Player returning a shot" loading="lazy" style="object-position:50% 20%"></div>
+<div class="t tall"><span class="pill">Video</span><video controls playsinline preload="none" poster="media/gallery-video-2-poster.jpg" aria-label="ALAB short clip"><source src="media/gallery-video-2.mp4" type="video/mp4"></video></div>
+<div class="t "><img src="media/gallery-photo-2.jpg" alt="Smiling player making a peace sign" loading="lazy" style="object-position:50% 22%"></div>
+<div class="t tall"><img src="media/gallery-photo-3.jpg" alt="Player ready at the net" loading="lazy" style="object-position:50% 30%"></div>
+<div class="t "><img src="media/gallery-photo-4.jpg" alt="Player watching the game from the net" loading="lazy" style="object-position:50% 30%"></div>
+<div class="t big"><img src="media/gallery-photo-5.jpg" alt="Group of players posing together" loading="lazy" style="object-position:50% 20%"></div>
+<div class="t "><img src="media/gallery-photo-6.jpg" alt="Player waiting at the net" loading="lazy" style="object-position:50% 5%"></div>
+</div>
+</div></section>
+
+<section class="sec" id="faq"><div class="wrap">
+<div class="rv" style="text-align:center"><p class="k">FAQ</p><h2>Good to know.</h2></div>
+<div class="faq rv">
+<details open=""><summary>How do I book a game or court?</summary><p>Open the ALAB app to see the live schedule, available games and open courts, then reserve your slot.</p></details>
+<details><summary>Do I need my own paddle?</summary><p>Not at all. Don’t have a paddle yet? You can rent one from us and enjoy the game hassle-free.</p></details>
+<details><summary>I am new to pickleball. Can I join?</summary><p>Absolutely. Beginners are always welcome. Come as you are, learn at your own pace, and enjoy the game.</p></details>
+</div>
+</div></section>
+
+<section class="sec" id="visit" style="padding-top:0"><div class="wrap">
+<div class="rv"><p class="k">Visit</p><h2>Come play.</h2></div>
+<div class="visit rv">
+<dl class="vl"><dt style="margin-top:0">Address</dt><dd>WAREHOUSE 7 &amp; 8, THE WAREHOUSE, Open Canal Rd, Malagasang II-C, Imus, 4103 Cavite</dd><dt>Hours</dt><dd>Monday - Friday (7am - 3am)<br>Saturday - Sunday (24 Hours)</dd><dt>Contact</dt><dd>09176370709</dd><div style="margin-top:36px"><a class="btn bp" href="#">Book a game</a></div></dl>
+<div class="map"><a class="pin" href="#" aria-label="Open location in Google Maps"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></a></div>
+</div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+<div class="brand" style="justify-content:center"><svg width="18" height="24" viewBox="0 0 24 32" aria-hidden="true"><defs><linearGradient id="gf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5C20F"></stop><stop offset=".55" stop-color="#F58A2E"></stop><stop offset="1" stop-color="#D4102F"></stop></linearGradient></defs><path fill="url(#gf)" d="M12 1c1 5 7 8 7 15a7 7 0 0 1-14 0c0-3 2-5 3-7 .5 2 1.5 3 2.5 3C11 8 10 5 12 1z"></path></svg>ALAB</div>
+<p style="color:#A1A1A6;margin-top:10px;letter-spacing:.2em;font-size:13px">IGNITE THE GAME</p>
+<div class="soc">
+<a href="#" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5.5v3.5H8V21h3.5v-7.5H14l.7-3.5h-3.2V7.5c0-.6.4-1 1-1H15z"></path></svg></a>
+<a href="#" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".6"></circle></svg></a>
+<a href="#" aria-label="TikTok"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.3 2.6 2 4.4 5 4.6"></path></svg></a>
+<a href="#" aria-label="Google Maps location"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></a>
+<a class="ap" href="#" aria-label="ALAB booking app: schedule, games and courts"><img src="media/alab-app-logo.png" alt=""></a>
+</div>
+<p class="copy">© ALAB Pickle Club</p>
+</div></footer>
+</div>
+
+</body>
+</html>
